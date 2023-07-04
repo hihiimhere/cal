@@ -44,13 +44,6 @@ class ViewController: UIViewController {
         }
     }
     
-    /// MARK: Functional code
-    // MARK: Input ViewController
-    func setWorkings(_ s: String) {
-        workings = workings + s
-        calculatorWorkings.text = workings
-    }
-    
     func calculate() {
         if isValid() {
             let expression = NSExpression(format: workings)
@@ -69,6 +62,13 @@ class ViewController: UIViewController {
             preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "okay", style: .default))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    /// MARK: Functional code
+    // MARK: Input ViewController
+    func setWorkings(_ s: String) {
+        workings = workings + s
+        calculatorWorkings.text = workings
     }
     
     func isValid() -> Bool {
@@ -162,6 +162,10 @@ extension ViewController {
         case multi = "*"
         case divide = "/"
     }
+}
+
+extension ViewController {
+    
 }
 
 
